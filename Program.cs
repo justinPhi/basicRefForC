@@ -24,8 +24,9 @@ namespace Giraffe
             Console.WriteLine("   / |" + characterName);
             Console.WriteLine("  /  |");
             Console.WriteLine(" /   |");
-            //some quick method examples
-            Console.WriteLine(characterName.Length); //prints length of string
+
+            //some quick C# string methods
+            Console.WriteLine( characterName.Length); //prints length of string
             Console.WriteLine( characterName.ToLower()); //converts string to lowercase
             Console.WriteLine( characterName.Contains("John"));
             Console.WriteLine( characterName.Contains("john")); //check is string conatains word and spits back a bool
@@ -33,12 +34,33 @@ namespace Giraffe
             Console.WriteLine( samplePhrase.IndexOf("pony")); //spits index of first letter in the word specified
             Console.WriteLine( samplePhrase.IndexOf('a')); //spits index of first char specified
             Console.WriteLine( samplePhrase.IndexOf('z')); //spits back -1 when char is not in the string
-            //00:47:00
+            Console.WriteLine( samplePhrase.Substring( samplePhrase.IndexOf("pony")) );
 
+            //some quick math operations
 
+            Console.WriteLine( 4 + 2 );
+            Console.WriteLine( 5 % 2 ); //% is modulus
+            Console.WriteLine( (4 +2) * 2); //() can change the order of the math operations
+            Console.WriteLine( Math.Sqrt(5)); //Math. will give you a bunch of useful math operations
 
-        
+            //operations to get user imput
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+            Console.WriteLine( "Hello " + name + "!" );
+            Console.Write(name + ", what is your age? ");
+            string  age = Console.ReadLine();
+            Console.WriteLine( "Hello " + name + ", your age is: " + age + "!" );
+
+            //basic calculator taking user inputs. Using a method that converts a string into a number
+            Console.Write("Enter a number: ");
+            int num1 = Convert.ToInt32(Console.ReadLine()); //takes user imput as a string and converts it to an int/number
+            Console.WriteLine("You entered: " + num1);
+            Console.WriteLine("To verify that this is trully treated as a number, your number x2 = " + num1 * 2);
+            //timestamp 01:14:00
+            
+
 
         }
     }
 }
+
