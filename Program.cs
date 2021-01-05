@@ -52,13 +52,25 @@ namespace Giraffe
             Console.WriteLine( "Hello " + name + ", your age is: " + age + "!" );
 
             //basic calculator taking user inputs. Using a method that converts a string into a number
-            Console.Write("Enter a number: ");
+            Console.Write("Enter a whole number: ");
             int num1 = Convert.ToInt32(Console.ReadLine()); //takes user imput as a string and converts it to an int/number
             Console.WriteLine("You entered: " + num1);
             Console.WriteLine("To verify that this is trully treated as a number, your number x2 = " + num1 * 2);
-            //timestamp 01:14:00
             
+            //basic madlibs type of game
+            string color, pluralNoun, food;
+            Console.Write("Enter a color: ");
+            color = Console.ReadLine();
 
+            Console.Write("Enter a plural noun: ");
+            pluralNoun = Console.ReadLine();
+            
+            Console.Write("Enter a favorite food: ");
+            food = Console.ReadLine();
+
+            Console.WriteLine("Roses are ," + color);
+            Console.WriteLine(pluralNoun + " are blue,");
+            Console.WriteLine("I Love " + food + " !");
 
         }
     }
