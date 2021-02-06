@@ -48,7 +48,7 @@ namespace Giraffe
             string name = Console.ReadLine();
             Console.WriteLine( "Hello " + name + "!" );
             Console.Write(name + ", what is your age? ");
-            string  age = Console.ReadLine();
+            int age = Convert.ToInt32(Console.ReadLine()); //takes user imput as a string and converts it to an int/number
             Console.WriteLine( "Hello " + name + ", your age is: " + age + "!" );
 
             //basic calculator taking user inputs. Using a method that converts a string into a number
@@ -72,7 +72,101 @@ namespace Giraffe
             Console.WriteLine(pluralNoun + " are blue,");
             Console.WriteLine("I Love " + food + " !");
 
+            //basic array usage, remember an array is basically a container
+            int[] luckyNumbers = { 4, 8, 15, 16};
+            Console.WriteLine ( luckyNumbers[0] ); //should give the first number in the array. remember index's start at 0 and array is indexed
+            string[] friends = new string[5]; //sets the size of the array
+            friends[0] = "john"; //populates the array
+            friends[1] = "kyle";
+
+            //going to call the method bellow
+            SayHi(name, age); //note that I had to pass in a string since method SayHi needs a string for nameMethod
+            SayHiAgain(name, age);
+            IfThens();
+            Console.WriteLine(GetMax(2, 10));
+
+            
         }
+
+
+
+        //methods / remember naming convention of starting methods with a capitol letter
+        //also know that some people call these methods functions though tec they are methods in C#
+        //notice how i use nameMethod and ageMethod instead of (name, age). this is show that method SayHi is actually taking in two inputs
+        static void SayHi(string nameMethod, int ageMethod) //adding string name inside the method () lets the method take in a peram.
+        //also note that i added an int and that you can add most any value to be passed into the method as well
+        {
+            Console.WriteLine("Hello ," + nameMethod + " this is the SayHi Method, you are " + ageMethod);
+            //remember that a method outiside of main does not get run automaticall so I will add a line above to callt his method
+        }
+
+
+       //dont forget to put identifiers for the inputs: name/ageMethod for every method taking an input in this case string and int
+        static void SayHiAgain(string nameMethod, int ageMethod)
+        {
+            //pack a box
+            int[] iLoveTheseNumbers = {1, 2 ,3 ,4};
+            Console.WriteLine("if i print a 1, then this is basic array usage: " + iLoveTheseNumbers[0]);
+
+            Console.WriteLine("Hello again "  + nameMethod + " who is btw " + ageMethod + ". this time we are calling a method with a return statement and 2 input numbers" );
+            Console.WriteLine("enter your test word:");
+            string tester = Console.ReadLine();
+            Console.WriteLine("your test word was: " + tester);
+            Console.WriteLine("these numbers will be cubed using a single method with a return of: 2, 3, and 7");
+            
+            Console.WriteLine(Cube(2));
+            Console.WriteLine(Cube(3));
+            Console.WriteLine(Cube(7));
+
+        }
+        
+        static int Cube(int num)
+        {
+            int result = num * num * num;
+            return result;
+        }
+
+        static void IfThens()
+        {
+            bool isMale = true;
+            bool isTall = false;
+
+            if (isMale && isTall) //could also use || for OR instead of AND
+            {
+                Console.WriteLine("you are a tall male");
+            }
+            else if (isMale && !isTall) 
+            {
+                Console.WriteLine("you are a short male");
+            }
+            else if (!isMale && isTall) 
+            {
+                Console.WriteLine("you are not male but you are tall");
+            }
+            else
+            {
+                Console.WriteLine("you are not male and not tall");
+            }
+        }
+
+        static int GetMax(int num1, int num2)
+        {
+            int resultGetMax;
+            if (num1 > num2)
+            {
+                resultGetMax = num1;
+            }
+            else
+            {
+                resultGetMax = num2;
+            }
+            return resultGetMax;
+        }
+
+
+
+
     }
 }
 
+//timestamp 02:06:00
