@@ -149,6 +149,7 @@ namespace Giraffe
             }
         }
 
+        //a method that returns the max of 2 numbers using a compare statement
         static int GetMax(int num1, int num2)
         {
             int resultGetMax;
